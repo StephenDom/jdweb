@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  /* 移动端a标签 点击高亮  */
+}
+img {
+  /* 去除图片默认的3px */
+  display: block;
+  width: 100%;
+}
+input {
+  display: block;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+ul {
+  list-style: none;
+}
+/* 清除浮动  */
+/*  before  */
+.clearfix::after {
+  display: block;
+  height: 0;
+  content: "";
+  clear: both;
+}
+.sort_view {
+  padding-top: 45px;
+  position: relative;
+}
+html,
+body,
+.sort_view,
+.container {
+  height: 100%;
+}
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 45px;
+  background-color: red;
+}
+.container {
+  position: relative;
+  padding-left: 80px;
+}
+.left_box {
+  height: 100%;
+  width: 80px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+.left_box ul li {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.left_box ul .active {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.right_box {
+  height: 100%;
+  width: 100%;
+  background-color: aqua;
+  overflow: hidden;
+}
+.right_box ul li {
+  float: left;
+  width: 33.33%;
+}

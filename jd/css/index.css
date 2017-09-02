@@ -1,0 +1,384 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  /* 移动端a标签 点击高亮  */
+}
+img {
+  /* 去除图片默认的3px */
+  display: block;
+  width: 100%;
+}
+input {
+  display: block;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+ul {
+  list-style: none;
+}
+/* 清除浮动  */
+/*  before  */
+.clearfix::after {
+  display: block;
+  height: 0;
+  content: "";
+  clear: both;
+}
+/* 定义函数 */
+/* 头部搜索框 */
+header {
+  height: 40px;
+  background-color: rgba(201, 21, 35, 0);
+  /* 给父元素加padding 一个子元素使用绝对定位 另外一个子元素宽度100% */
+  padding: 5px 50px 5px 70px;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+header > a {
+  position: absolute;
+  width: 70px;
+  height: 100%;
+  top: 0;
+}
+header > .logo {
+  left: 0;
+  background-position: 0 -110px;
+  /* 增大背景图片的相应区域  */
+  background-origin: content-box;
+  background-clip: content-box;
+  padding: 10px 6px;
+  background-image: url(../images/jd-sprites.png);
+  /*  把图片缩小一倍 */
+  background-size: 200px 200px;
+}
+header > .login {
+  right: 0;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  width: 50px;
+}
+header > .search {
+  height: 100%;
+  /* 宽度可以省略 */
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+header > .search input {
+  text-indent: 30px;
+}
+header > .search::before {
+  display: block;
+  position: absolute;
+  content: "";
+  background-image: url(../images/jd-sprites.png);
+  /*  把图片缩小一倍 */
+  background-size: 200px 200px;
+  width: 20px;
+  height: 20px;
+  background-position: -59px -110px;
+  top: 6px;
+  left: 10px;
+}
+/* 轮播图 */
+.jd_carousel {
+  overflow: hidden;
+  position: relative;
+}
+.jd_carousel .carousel_img {
+  width: 1000%;
+  touch-action: none;
+}
+.jd_carousel .carousel_img li {
+  width: 10%;
+  float: left;
+}
+.jd_carousel .indexer {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.jd_carousel .indexer li {
+  float: left;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 5px;
+  border: 1px solid #fff;
+}
+.jd_carousel .indexer .active {
+  background-color: #fff;
+}
+/* 首页导航 */
+.jd_nav ul li {
+  float: left;
+  width: 25%;
+}
+.jd_nav ul li a {
+  text-align: center;
+  padding-top: 5px;
+  font-size: 14px;
+  color: #666;
+}
+.jd_nav ul li a img {
+  width: 50%;
+  margin: 0 auto;
+}
+.line {
+  height: 10px;
+  background-color: #f5f5f5;
+}
+/*  掌上秒杀 */
+.hand_kill .kill_title {
+  /* 闹钟  */
+  /* 掌上秒杀 */
+  /* 时间标签 */
+  /* 更多秒杀 */
+}
+.hand_kill .kill_title .clock {
+  background-image: url(../images/jd-sprites.png);
+  /*  把图片缩小一倍 */
+  background-size: 200px 200px;
+  background-position: -84px -110px;
+  width: 18px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+.hand_kill .kill_title .kill_font {
+  color: #c91523;
+  margin-left: 10px;
+}
+.hand_kill .kill_title .timer {
+  display: inline-block;
+  /*  空格也是字体中 的一种 给父元素加font-size 去除掉
+            空格的间隙 再给带有文字的标签 span加font-size即可
+              */
+  font-size: 0;
+}
+.hand_kill .kill_title .timer span {
+  background-color: #000;
+  color: #ffffe0;
+  padding: 0 2px;
+  font-size: 16px;
+  margin-left: 2px;
+}
+.hand_kill .kill_title .timer span:nth-child(3n) {
+  background-color: #fff;
+  color: #000;
+}
+.hand_kill .kill_title a {
+  display: inline-block;
+}
+.hand_kill .kill_content ul li {
+  float: left;
+  width: 33.3333%;
+}
+.hand_kill .kill_content ul li a {
+  padding-top: 5px;
+  position: relative;
+  text-align: center;
+  font-size: 14px;
+}
+.hand_kill .kill_content ul li a .kill_tips {
+  background-color: #fdb60a;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 7px;
+  position: absolute;
+  top: 50%;
+  left: 52%;
+}
+.hand_kill .kill_content ul li a .new_price {
+  color: #c91523;
+}
+.hand_kill .kill_content ul li a del {
+  color: #666666;
+}
+/* 618 节假日 */
+.jd_festival .fes_title {
+  position: relative;
+}
+.jd_festival .fes_title ul {
+  /*  给元素加绝对定位 也是可以清除浮动的  */
+  bottom: 5px;
+  position: absolute;
+}
+.jd_festival .fes_title ul li {
+  float: left;
+  width: 50%;
+}
+.jd_festival .fes_title ul li a {
+  padding: 0 2px;
+}
+.jd_festival .fes_content ul li {
+  float: left;
+  width: 50%;
+}
+.jd_festival .fes_content ul li:nth-child(-n+3) {
+  width: 33.33333%;
+}
+/* 广告 */
+.adv {
+  padding: 5px;
+}
+/* 商品的标题 */
+.goods_title {
+  color: #c91523;
+  padding-left: 5px;
+}
+/* 特色超市  */
+.jd_market .market_content ul li {
+  float: left;
+  width: 50%;
+}
+.jd_market .market_content ul li:nth-child(4) {
+  clear: both;
+}
+/* 主题街  */
+.jd_theme .theme_content ul li {
+  float: left;
+  width: 25%;
+}
+.jd_theme .theme_content ul li:nth-child(-n+2) {
+  width: 50%;
+}
+.jd_theme .theme_content ul li:nth-child(5) {
+  clear: both;
+}
+/* 品牌推荐 */
+.jd_recommend .recommend_content ul li {
+  float: left;
+  width: 30%;
+}
+.jd_recommend .recommend_content ul li a {
+  padding: 2px;
+}
+.jd_recommend .recommend_content ul li:first-child {
+  width: 40%;
+}
+/* 猜你喜欢 */
+.jd_guess .guess_title a {
+  display: inline-block;
+  float: right;
+  font-weight: 400;
+  font-size: 13px;
+}
+.jd_guess .guess_title a img {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+.jd_guess .guess_content ul li {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+.jd_guess .guess_content ul li .gc_title span {
+  color: #c91523;
+}
+.jd_guess .guess_content ul li .gc_title a {
+  float: right;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color: #666;
+}
+.jd_guess .guess_content ul li .gc_content a img {
+  width: 90%;
+  margin: 0 auto;
+}
+.jd_guess .guess_content ul li .gc_content a p {
+  height: 40px;
+  overflow: hidden;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+}
+/* 底部工具 */
+.footer_tools {
+  background-color: #f3f5f7;
+  color: #666;
+  text-align: center;
+}
+.footer_tools > div {
+  border-top: 1px solid #ccc;
+}
+.footer_tools .more a {
+  padding: 10px 0;
+}
+.footer_tools .footer_nav {
+  padding: 10px 0;
+}
+.footer_tools .footer_nav a {
+  float: left;
+  width: 25%;
+  border-right: 1px solid #000;
+}
+.footer_tools .footer_nav a:last-child {
+  border-right: none;
+}
+.footer_tools .device a {
+  float: left;
+  width: 33.33%;
+  padding: 10px 0;
+}
+.footer_tools .device a span:nth-child(1) {
+  background-image: url(../images/jd-sprites.png);
+  /*  把图片缩小一倍 */
+  background-size: 200px 200px;
+  background-position: -120px -70px;
+  width: 34px;
+  height: 34px;
+  display: inline-block;
+}
+.footer_tools .device > a:nth-child(2) span {
+  background-image: url(../images/jd-sprites.png);
+  /*  把图片缩小一倍 */
+  background-size: 200px 200px;
+  background-position: -40px -70px;
+  width: 34px;
+  height: 34px;
+  display: inline-block;
+}
+.footer_tools .device > a:nth-child(3) span {
+  background-image: url(../images/jd-sprites.png);
+  /*  把图片缩小一倍 */
+  background-size: 200px 200px;
+  background-position: -80px -70px;
+  width: 34px;
+  height: 34px;
+  display: inline-block;
+}
+.footer_tools .copyright {
+  padding: 20px;
+}
+/* 尾部 */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: inline-block;
+}
+footer a {
+  float: left;
+  width: 20%;
+}
+.bt {
+  visibility: hidden;
+  width: 100%;
+}
+.bt a img {
+  width: 20%;
+}

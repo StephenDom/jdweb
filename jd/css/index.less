@@ -1,0 +1,458 @@
+@import "base.less";
+
+/* 定义函数 */    
+
+.jd_sprite() {
+    background-image: url(../images/jd-sprites.png);
+    /*  把图片缩小一倍 */
+    background-size: 200px 200px;
+}
+
+.view {}  
+    
+
+/* 头部搜索框 */
+
+header {
+    height: 40px;
+    background-color: rgba(201, 21, 35, 0);
+    /* 给父元素加padding 一个子元素使用绝对定位 另外一个子元素宽度100% */
+    padding: 5px 50px 5px 70px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    >a {
+        position: absolute;
+        width: 70px;
+        height: 100%;
+        top: 0;
+    }
+    >.logo {
+        left: 0; // background-color: yellow;
+        background-position: 0 -110px; // width: 56px;
+        /* 增大背景图片的相应区域  */
+        background-origin: content-box;
+        background-clip: content-box;
+        padding: 10px 6px;
+        .jd_sprite();
+    }
+    >.login {
+        right: 0; // background-color: green;
+        text-align: center;
+        line-height: 40px;
+        color: #fff;
+        width: 50px;
+    }
+    >.search {
+        height: 100%;
+        /* 宽度可以省略 */
+        // background-color: blue;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        input {
+            text-indent: 30px;
+        }
+        &::before {
+            display: block;
+            position: absolute;
+            content: "";
+            .jd_sprite();
+            width: 20px;
+            height: 20px;
+            background-position: -59px -110px;
+            top: 6px;
+            left: 10px;
+        }
+    }
+}
+
+
+/* 轮播图 */
+
+.jd_carousel {
+      overflow: hidden;
+      position: relative;
+     .carousel_img{
+          width:1000%;
+          touch-action: none;
+         li{
+             width: 10%;
+             float: left;
+         }
+     } 
+     .indexer{
+        //  width: 100%;
+        position: absolute;
+        bottom: 10px;
+        left:50%;
+        transform: translateX(-50%);
+        li{
+            float: left;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-left: 5px;
+            border: 1px solid #fff;
+        }
+        .active{
+            background-color: #fff; 
+        }
+     }  
+}
+
+
+/* 首页导航 */
+
+.jd_nav {
+    ul {
+        li {
+            float: left;
+            width: 25%;
+            a {
+                text-align: center;
+                padding-top: 5px;
+                font-size: 14px;
+                color: #666;
+                img {
+                    width: 50%;
+                    margin: 0 auto;
+                }
+                p {}
+            }
+        }
+    }
+}
+
+.line {
+    height: 10px;
+    background-color: #f5f5f5;
+}
+
+
+/*  掌上秒杀 */
+
+.hand_kill {
+    .kill_title {
+        /* 闹钟  */
+        .clock {
+            .jd_sprite();
+            background-position: -84px -110px;
+            width: 18px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 20px;
+        }
+        /* 掌上秒杀 */
+        .kill_font {
+            color: #c91523;
+            margin-left: 10px;
+        }
+        /* 时间标签 */
+        .timer {
+            display: inline-block;
+            /*  空格也是字体中 的一种 给父元素加font-size 去除掉
+            空格的间隙 再给带有文字的标签 span加font-size即可
+              */
+            font-size: 0;
+            span {
+                background-color: #000;
+                color: #ffffe0;
+                padding: 0 2px;
+                font-size: 16px;
+                margin-left: 2px;
+            }
+            span:nth-child(3n) {
+                background-color: #fff;
+                color: #000;
+            }
+        }
+        /* 更多秒杀 */
+        a {
+            display: inline-block;
+        }
+    }
+    .kill_content {
+        ul {
+            li {
+                float: left;
+                width: 33.3333%;
+                a {
+                    padding-top: 5px;
+                    position: relative;
+                    text-align: center;
+                    font-size: 14px;
+                    .kill_tips {
+                        background-color: #fdb60a;
+                        color: #fff;
+                        border-radius: 50%;
+                        padding: 2px 7px;
+                        position: absolute;
+                        top: 50%;
+                        left: 52%;
+                    }
+                    .new_price {
+                        color: #c91523;
+                    }
+                    del {
+                        color: #666666;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 618 节假日 */
+
+.jd_festival {
+    .fes_title {
+        position: relative;
+        ul {
+            /*  给元素加绝对定位 也是可以清除浮动的  */
+            bottom: 5px;
+            position: absolute;
+            li {
+                float: left;
+                width: 50%;
+                a {
+                    padding: 0 2px;
+                }
+            }
+        }
+    }
+    .fes_content {
+        ul {
+            li {
+                float: left;
+                width: 50%;
+            }
+            li:nth-child(-n+3) {
+                width: 33.33333%;
+            }
+        }
+    }
+}
+
+
+/* 广告 */
+
+.adv {
+    padding: 5px;
+}
+
+
+/* 商品的标题 */
+
+.goods_title {
+    color: #c91523;
+    padding-left: 5px;
+}
+
+
+/* 特色超市  */
+
+.jd_market {
+   .market_content{
+       ul{
+           li{
+               float: left;
+               width: 50%;
+           }
+           li:nth-child(4){
+               clear: both;
+           }
+       }
+   }
+}
+
+
+/* 主题街  */
+
+.jd_theme {
+  .theme_content{
+      ul{
+          li{
+              float: left;
+              width: 25%;
+          }
+          li:nth-child(-n+2){
+              width: 50%;
+          }
+          li:nth-child(5){
+              clear: both;
+          }
+      }
+  }
+}
+
+
+/* 品牌推荐 */
+
+.jd_recommend {
+   .recommend_content{
+       ul{
+           li{
+               float: left;
+              width: 30%;
+              a{
+                  padding: 2px;
+              }
+           }
+           li:first-child{
+               width: 40%;
+           }
+       }
+   }
+}
+
+
+/* 猜你喜欢 */
+
+.jd_guess {
+   .guess_title{
+    a{
+        display: inline-block;
+        float: right;
+         font-weight: 400;
+                font-size: 13px;
+        img{
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;      
+        }
+    }
+   }
+   .guess_content{
+        ul{
+            li{
+                float: left;
+                width: 50%;
+                padding: 5px;
+               .gc_title{
+                span{
+                    color: #c91523;
+                }
+                a{
+                    float: right;
+                    border: 1px solid #ccc;
+                    font-size: 14px;
+                    color: #666;
+                }
+               } 
+               .gc_content{
+                a{
+                     img{
+                        width: 90%;
+                        margin: 0 auto;
+                }
+                    p{
+                            height: 40px;
+                            overflow: hidden;
+                            font-size: 14px;
+                            border-bottom: 1px solid #ccc;
+                }
+                }
+               
+               }
+            }
+        }
+   }
+}
+
+
+/* 底部工具 */
+
+.footer_tools {
+   background-color: #f3f5f7;
+   color: #666;
+   text-align: center;
+   >div{
+       border-top: 1px solid #ccc;
+   }
+   .more{
+       a{
+           padding: 10px 0;
+       }
+   }
+   .footer_nav{
+       padding: 10px 0;
+       a{
+           float: left;
+           width: 25%;
+           border-right: 1px solid #000;
+       }
+       a:last-child{
+           border-right:none;
+       }
+   }
+   .device{
+       a{
+           float: left;
+           width: 33.33%;
+           padding: 10px 0;
+
+           span:nth-child(1){
+               .jd_sprite();
+               background-position: -120px -70px;
+               width: 34px;
+               height: 34px;
+               display: inline-block;
+           } 
+           p{}
+       }
+       >a:nth-child(2){
+           span{
+               .jd_sprite();
+               background-position: -40px -70px;
+               width: 34px;
+               height: 34px;
+               display: inline-block;
+           }
+       }
+       >a:nth-child(3){
+           span{
+               .jd_sprite();
+               background-position: -80px -70px;
+               width: 34px;
+               height: 34px;
+               display: inline-block;
+           }
+       }
+   }
+   .copyright{
+       padding: 20px;
+   }
+}
+
+
+
+/* 尾部 */
+
+footer {
+     position: fixed;
+       bottom: 0;
+       width: 100%;
+       display: inline-block;
+      
+   a{
+        float: left;
+       width: 20%;
+       img{
+          
+       }
+   }
+}
+.bt{
+     visibility: hidden;
+     width: 100%;
+    a{
+       img {
+        width: 20%;
+       
+        }
+    }
+}

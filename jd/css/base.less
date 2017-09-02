@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    /* 移动端a标签 点击高亮  */
+    // -webkit-tap-highlight-color:transparent;  
+}    
+
+img {
+    /* 去除图片默认的3px */    
+    display: block;
+    width: 100%;
+} 
+
+input {
+    display: block;
+    outline: none;
+    border: none;
+    width: 100%; 
+    height: 100%;
+}
+ 
+ul {  
+    list-style: none;
+}
+
+
+/* 清除浮动  */
+/*  before  */
+.clearfix::after {
+    display: block;
+    height: 0;
+    content: "";
+    clear: both;
+}
